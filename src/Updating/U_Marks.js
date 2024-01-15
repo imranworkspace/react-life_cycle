@@ -17,17 +17,26 @@ class U_Marks extends Component{
     return null
   }
 
-  // shouldComponentUpdate(nextprops,nextstate){
-  //   if (this.state.mroll < 107){
-  //     console.log('U_Marks - shouldComponentUpdate')
-  //     console.log(nextprops,nextstate)
-  //     return true
-  //   }
-  //   else{
-  //     console.log(nextprops,nextstate)
-  //     return  false
-  //   } 
-  // }
+  shouldComponentUpdate(nextprops,nextstate){
+    console.log('U_Marks - shouldComponentUpdate')
+    console.log(nextprops)
+    console.log(nextstate)
+    return true
+  }
+
+  getSnapshotBeforeUpdate(prevProps,prevStates){
+    console.log('U_Marks - getSnapshotBeforeUpdate before update')
+    console.log(prevProps)
+    console.log(prevStates)
+    return 45
+  }
+
+  componentDidUpdate(prevProps,prevStates,snapshot){
+    console.log('U_Marks - componentDidUpdate after update')
+    console.log(prevProps)
+    console.log(prevStates)
+    console.log(snapshot)
+  }
 
   render(){
     console.log('U_Marks - renderer')
